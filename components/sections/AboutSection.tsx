@@ -26,14 +26,17 @@ export function AboutSection() {
             A full stack developer who thinks in products.
           </h2>
           <p className="text-sm leading-relaxed text-slate-300 md:text-base">
-            This is placeholder copy for your story. Introduce yourself, your
-            background, and how you combine backend, frontend, and product
-            thinking. Keep it concise and specific to the work you want to do.
+            I'm Taras, a full stack developer with 8+ years of hands-on
+            experience building modern web applications and scalable systems. I
+            specialize in turning ideas into high-quality digital products -
+            from robust backend architecture to polished, interactive frontends.
           </p>
           <p className="text-sm leading-relaxed text-slate-300 md:text-base">
-            Use this space to describe how you collaborate with clients and
-            teams, what you value in a project, and what types of challenges
-            you enjoy solving.
+            I focus on building fast, reliable, and user-friendly solutions that
+            not only look great but also perform at a high level. I enjoy
+            collaborating with clients and teams to solve real business
+            problems, improve user experience, and deliver scalable,
+            production-ready products.
           </p>
         </motion.div>
 
@@ -47,21 +50,21 @@ export function AboutSection() {
               items: [
                 "Full stack web apps and APIs",
                 "Cinematic, conversion-focused sites",
-                "Motion, micro-interactions, and polish"
-              ]
+                "Motion, micro-interactions, and polish",
+              ],
             },
             {
               label: "Ideal collaborations",
               items: [
-                "Early-stage startups preparing a launch",
-                "Product teams refreshing outdated experiences",
-                "Agencies needing a reliable dev partner"
-              ]
+                "Startups building or launching new products",
+                "Businesses looking to scale or modernize",
+                "Teams needing a reliable full stack partner",
+              ],
             },
             {
               label: "Beyond the screen",
-              copy: "Add a few human details here—hobbies, interests, or anything that makes collaboration feel more personal."
-            }
+              copy: "Outside of development, I'm passionate about technology, design, and creating digital experiences. I also enjoy working with drones, photography, and exploring new creative tools.",
+            },
           ].map((block) => (
             <div
               key={block.label}

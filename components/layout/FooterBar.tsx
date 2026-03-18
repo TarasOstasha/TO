@@ -6,7 +6,7 @@ export function FooterBar() {
           © {new Date().getFullYear()} Taras Ostasha. All rights reserved.
         </p>
         <p className="flex flex-wrap items-center gap-3">
-          <span>Based in [Your City]</span>
+          <span>Based in North Jersey, USA</span>
           <span className="h-1 w-1 rounded-full bg-slate-600" />
           <span>Available for remote collaborations worldwide.</span>
         </p>

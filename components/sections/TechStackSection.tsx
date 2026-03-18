@@ -8,14 +8,14 @@ const categories = [
     title: "Product & UX",
     items: [
       "User flows and navigation",
-      "Landing pages that convert",
+      "Conversion-focused landing pages",
       "Design systems & layout structure"
     ]
   },
   {
     title: "Frontend Engineering",
     items: [
-      "Next.js apps and marketing sites",
+      "React and Next.js applications",
       "Component-driven UI architecture",
       "Performance-minded implementation"
     ]
@@ -41,21 +41,28 @@ const categories = [
 const techChips = [
   "HTML",
   "CSS",
+  "Sass",
+  "Less",
+  "Bootstrap",
+  "Material UI",
+  "Chakra UI",
+  "Tailwind CSS",
+  "Framer Motion",
+  "WordPress",
+  "Volusion",
+  "Shopify",
   "JavaScript",
   "TypeScript",
+  "PHP",
   "Angular",
   "React",
+  "Vue",
   "Next.js",
   "Node.js",
   "Express",
   "MongoDB",
   "PostgreSQL",
-  "Docker",
-  "Tailwind CSS",
-  "Framer Motion",
-  "WordPress",
-  "Volusion",
-  "Shopify"
+  "Docker"
 ];
 
 export function TechStackSection() {
@@ -79,12 +86,12 @@ export function TechStackSection() {
           <p className="text-overline text-slate-400">Skills</p>
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <h2 className="font-display text-display-md font-semibold text-slate-50">
-              What I bring to your project.
+              What you get working with me.
             </h2>
             <p className="max-w-md text-xs text-slate-400 md:text-[13px]">
-              Adjust these categories and tools to match your real strengths.
+              {/* Adjust these categories and tools to match your real strengths.
               The goal is to quickly show clients how you think and what you can
-              own end-to-end.
+              own end-to-end. */}
             </p>
           </div>
         </motion.div>

@@ -27,9 +27,11 @@ export function ContactSection() {
               Tell me about your next launch.
             </h2>
             <p className="text-sm leading-relaxed text-slate-300 md:text-base">
-              Replace this text with how you like to work with new clients and
-              what kinds of projects you are currently interested in. Mention
-              your usual response time to set expectations.
+              I work with startups, businesses, and teams to build fast,
+              scalable, and user-focused web applications. If you have an idea,
+              need to improve an existing product, or want to launch something
+              new, I'd love to hear about it. I typically respond within 24
+              hours.
             </p>
           </motion.div>
 
@@ -39,7 +41,7 @@ export function ContactSection() {
           >
             <div className="flex-1 space-y-3 text-sm text-slate-200">
               <a
-                href="mailto:you@example.com"
+                href="mailto:dev@tarasostasha.com?subject=Project Inquiry"
                 className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-slate-950 shadow-glow transition-shadow duration-300 hover:shadow-glow-md"
               >
                 Email me
@@ -104,9 +106,9 @@ export function ContactSection() {
               </div>
               <button
                 type="button"
-                className="mt-1 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-100 transition-colors hover:border-accent/50 hover:text-accent hover:shadow-glow-sm"
+                className="mt-1 w-full inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-100 transition-colors hover:border-accent/50 hover:text-accent hover:shadow-glow-sm"
               >
-                Send message (placeholder)
+                Send message
               </button>
             </form>
           </motion.div>
@@ -115,4 +117,3 @@ export function ContactSection() {
     </motion.section>
   );
 }
-
