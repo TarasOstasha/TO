@@ -55,12 +55,19 @@ export function ContactSection() {
               </div>
             </div>
 
-            <form className="flex-1 space-y-3 text-[13px]">
+            <form
+              action="/contact.php"
+              method="post"
+              className="flex-1 space-y-3 text-[13px]"
+            >
               <div>
                 <label className="mb-1 block text-xs font-medium uppercase tracking-[0.18em] text-slate-400">
                   Name
                 </label>
                 <input
+                  name="name"
+                  required
+                  autoComplete="name"
                   className="w-full rounded-xl border border-white/10 bg-slate-900/80 px-3 py-2 text-sm text-slate-100 outline-none ring-accent/40 placeholder:text-slate-500 focus:border-accent/60 focus:ring-2"
                   placeholder="Your name"
                 />
@@ -70,43 +77,40 @@ export function ContactSection() {
                   Email
                 </label>
                 <input
+                  name="email"
+                  required
+                  type="email"
+                  autoComplete="email"
                   className="w-full rounded-xl border border-white/10 bg-slate-900/80 px-3 py-2 text-sm text-slate-100 outline-none ring-accent/40 placeholder:text-slate-500 focus:border-accent/60 focus:ring-2"
                   placeholder="you@example.com"
                 />
               </div>
-              <div className="grid gap-3 md:grid-cols-2">
-                <div>
-                  <label className="mb-1 block text-xs font-medium uppercase tracking-[0.18em] text-slate-400">
-                    Project type
-                  </label>
-                  <input
-                    className="w-full rounded-xl border border-white/10 bg-slate-900/80 px-3 py-2 text-sm text-slate-100 outline-none ring-accent/40 placeholder:text-slate-500 focus:border-accent/60 focus:ring-2"
-                    placeholder="Marketing site, product UI, etc."
-                  />
-                </div>
-                <div>
-                  <label className="mb-1 block text-xs font-medium uppercase tracking-[0.18em] text-slate-400">
-                    Budget range
-                  </label>
-                  <input
-                    className="w-full rounded-xl border border-white/10 bg-slate-900/80 px-3 py-2 text-sm text-slate-100 outline-none ring-accent/40 placeholder:text-slate-500 focus:border-accent/60 focus:ring-2"
-                    placeholder="Optional"
-                  />
-                </div>
+              <div>
+                <label className="mb-1 block text-xs font-medium uppercase tracking-[0.18em] text-slate-400">
+                  Phone (optional)
+                </label>
+                <input
+                  name="phone"
+                  autoComplete="tel"
+                  className="w-full rounded-xl border border-white/10 bg-slate-900/80 px-3 py-2 text-sm text-slate-100 outline-none ring-accent/40 placeholder:text-slate-500 focus:border-accent/60 focus:ring-2"
+                  placeholder="+1 (555) 000-0000"
+                />
               </div>
               <div>
                 <label className="mb-1 block text-xs font-medium uppercase tracking-[0.18em] text-slate-400">
                   Project details
                 </label>
                 <textarea
+                  name="proposition"
+                  required
                   rows={4}
                   className="w-full resize-none rounded-xl border border-white/10 bg-slate-900/80 px-3 py-2 text-sm text-slate-100 outline-none ring-accent/40 placeholder:text-slate-500 focus:border-accent/60 focus:ring-2"
                   placeholder="Timeline, goals, links, anything that helps me understand the work."
                 />
               </div>
               <button
-                type="button"
-                className="mt-1 w-full inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-100 transition-colors hover:border-accent/50 hover:text-accent hover:shadow-glow-sm"
+                type="submit"
+                className="mt-1 inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-100 transition-colors hover:border-accent/50 hover:text-accent hover:shadow-glow-sm"
               >
                 Send message
               </button>

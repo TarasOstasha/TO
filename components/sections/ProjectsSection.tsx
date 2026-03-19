@@ -3,46 +3,203 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeInUp, sectionReveal, staggerContainer } from "@/lib/motion";
+import Image from "next/image";
 
 const projects = [
   {
-    title: "Project Alpha",
-    tag: "SaaS marketing · Design & build",
+    title: "Crystal System Cleaning",
+    img: "/images/projects/crystal-system-cleaning.png",
+    tag: "Business website · Booking system · Full stack",
     description:
-      "Placeholder description for a flagship project. Describe the problem, your role, and the outcome.",
-    tech: ["Next.js", "React", "Tailwind", "Framer Motion"]
+      "Developed a full-featured website for a large cleaning company in Manhattan, supporting residential, office, and commercial services. Implemented a custom booking system with real-time availability, secure payments via Stripe, and user authentication. The platform streamlines service scheduling and improves customer experience.",
+    tech: [
+      "React",
+      "Node.js (Express)",
+      "MongoDB",
+      "Stripe Payments",
+      "Google APIs",
+      "REST API",
+      "Nodemailer",
+      "Bootstrap",
+      "LESS",
+    ],
   },
   {
-    title: "Project Beta",
-    tag: "Product UI · Full stack",
+    title: "Drone Parts USA",
+    img: "/images/projects/drone-parts-usa.png",
+    tag: "E-commerce platform · Global sales · Product catalog",
     description:
-      "Another featured project you can replace. Keep the focus on results and impact.",
-    tech: ["Next.js", "TypeScript", "Node", "PostgreSQL"]
+      "Developed a modern e-commerce website for selling drones, drone parts, and FPV accessories worldwide. Built a responsive storefront with product catalog browsing, promotional sections, and a performance-focused user experience using Next.js and React, with SEO improvements to support product visibility and growth.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vercel KV",
+      "Axios",
+      "Swiper",
+      "Formidable",
+    ],
   },
   {
-    title: "Project Gamma",
-    tag: "Marketing campaign site",
+    title: "WakeUp Bellisima",
+    img: "/images/projects/wakeup-bellisima.png",
+    tag: "Beauty salon website · Booking system · Service platform",
     description:
-      "Use this slot for a visually strong marketing or campaign site with motion.",
-    tech: ["Next.js", "Framer Motion", "Animations"]
-  }
+      "Built a modern website and booking platform for a North NJ-based beauty and massage studio. Designed a clean, calming user experience to highlight services such as professional makeup, massage, and add-ons. Developed an intuitive booking flow to simplify appointment scheduling and enhance customer engagement, helping improve client retention and overall booking efficiency.",
+    tech: ["Next.js", "Framer Motion", "Animations"],
+  },
+  {
+    title: "Cybersance",
+    img: "/images/projects/cybersance.png",
+    tag: "Landing page · Marketing website · Custom frontend",
+    description:
+      "Developed a custom marketing website for a cybersecurity company, focusing on clear service presentation, strong visual identity, and responsive design. Implemented a structured, section-based layout with optimized assets to deliver a fast and engaging user experience across devices.",
+    tech: [
+      "HTML",
+      "CSS",
+      "LESS",
+      "Bootstrap",
+      "JavaScript",
+      "Express.js",
+      "Gulp",
+      "Autoprefixer",
+      "BrowserSync",
+      "Image Optimization",
+    ],
+  },
+  {
+    title: "Order Processing Automation System",
+    img: "/images/projects/order-processing-automation-system.png",
+    tag: "Internal business system · Workflow automation · Admin platform",
+    description:
+      "Developed an internal order processing and product reselling system integrated with the Volusion API and existing Volusion workflows. The platform automated product ordering, purchase order generation, and reseller operations, saving hundreds of hours of manual work, reducing order-related issues by 80%, and increasing team productivity by 50%. Built to streamline high-volume operations and improve overall processing accuracy..",
+    tech: [
+      "React",
+      "Redux",
+      "Vite",
+      "Node.js",
+      "Express",
+      "REST API",
+      "Volusion API",
+      "Axios",
+      "Formik",
+      "Yup",
+      "React Router",
+      "Bootstrap",
+      "Sass",
+      "Jest",
+      "React Testing Library",
+    ],
+  },
+  {
+    title: "Transaction Checker System",
+    img: "/images/projects/transaction-checker-system.png",
+    tag: "Internal tool · Data validation · Workflow automation",
+    description:
+      "Developed an internal transaction validation system that compares bank statement records with order data from the Volusion API. Built a workflow to process transaction-related data from Gmail and bank statement files, returning only the specific records needed for review. The tool saves hundreds of hours annually, reduces manual sales effort, and improves business efficiency and accuracy.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Express.js",
+      "Axios",
+      "Formik",
+      "Yup",
+      "Sass",
+      "Gmail API",
+      "Microsoft Graph API",
+      "MSAL.js",
+      "Volusion API",
+      "CSV Processing",
+      "Multer",
+    ],
+  },
+  {
+    title: "Custom Product Filter Platform",
+    img: "/images/projects/custom-product-filter-platform.png",
+    tag: "Full stack app · Admin system · Product filtering engine",
+    description:
+      "Built a custom product filtering platform for large e-commerce catalogs, designed to handle over 50,000 products with fast, high-quality filtering and search experience. Developed both a customer-facing filter interface and an admin panel for managing custom filters, importing and exporting product data via CSV files, and integrating with the Volusion API. The system was designed as a scalable solution with the potential to be integrated into any Volusion-based store.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Express.js",
+      "PostgreSQL",
+      "Sequelize",
+      "Volusion API",
+      "REST API",
+      "CSV Import/Export",
+      "XLSX Processing",
+      "Authentication (JWT)",
+      "Formik",
+      "Yup",
+      "Axios",
+      "React Router",
+      "React Slider",
+      "Sass",
+      "Bootstrap",
+      "Multer",
+    ],
+  },
+  {
+    title: "Order Workflow & Production Management System",
+    img: "/images/projects/order-workflow-and-production-management-system.png",
+    tag: "Full stack platform · Internal operations · Multi-admin workflow",
+    description:
+      "Developed a full-stack order workflow and production management system used to support the complete order lifecycle - from order intake and status updates to production tracking and archival. Built for multi-admin use, the platform manages thousands of tasks and orders while improving team coordination, process visibility, and operational efficiency. Its successful adoption helped strengthen internal workflows and supported the growth of a high-volume reseller business in the U.S.",
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Sequelize",
+      "Redux Toolkit",
+      "Material UI",
+      "MUI Data Grid",
+      "Formik",
+      "Yup",
+      "Axios",
+      "XLSX Processing",
+      "Authentication",
+      "Sass",
+      "Multer",
+    ],
+  },
+  {
+    title: "Bulk UPS Reference Tracking System",
+    img: "/images/projects/bulk-ups-reference-tracking-system.png",
+    tag: "Logistics tool · Real-time tracking · Delivery monitoring",
+    description:
+      "Built a bulk shipment tracking system integrated into a dropshipping workflow, giving the team real-time visibility into UPS deliveries and helping catch issues before they impact customers. Implemented alert-based monitoring to surface delays and important shipment updates, improving response time, customer communication, and overall order management.",
+    tech: [
+      "Next.js",
+      "React",
+      "UPS Tracking Integration",
+      "Shipment Monitoring",
+      "Alert Workflows",
+      "date-fns",
+    ],
+  },
 ];
 
 const slideVariants = {
   enter: (direction: number) => ({
     x: direction > 0 ? 80 : -80,
-    opacity: 0
+    opacity: 0,
   }),
   center: {
     x: 0,
     opacity: 1,
-    transition: { duration: 0.35, ease: [0.22, 0.61, 0.36, 1] }
+    transition: { duration: 0.35, ease: [0.22, 0.61, 0.36, 1] },
   },
   exit: (direction: number) => ({
     x: direction > 0 ? -80 : 80,
     opacity: 0,
-    transition: { duration: 0.3 }
-  })
+    transition: { duration: 0.3 },
+  }),
 };
 
 export function ProjectsSection() {
@@ -130,10 +287,15 @@ export function ProjectsSection() {
                         0{index + 1} / {projects.length}
                       </span>
                     </div>
-                    <div className="aspect-[16/9] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950">
-                      <div className="flex h-full w-full items-center justify-center text-xs uppercase tracking-[0.24em] text-slate-500">
-                        Project image / mockup
-                      </div>
+                    <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950">
+                      <Image
+                        src={project.img}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 66vw"
+                        className="object-cover"
+                        priority
+                      />
                     </div>
                     <div className="space-y-2">
                       <h3 className="text-lg font-semibold text-slate-50 md:text-xl">
