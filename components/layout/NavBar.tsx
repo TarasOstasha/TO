@@ -24,8 +24,11 @@ export function NavBar() {
           href="#hero"
           className="flex items-center gap-2 transition-opacity hover:opacity-90"
         >
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs font-semibold tracking-widest text-slate-200 ring-1 ring-white/5">
-            TO
+          <span className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-semibold tracking-[0.14em] text-slate-200 ring-1 ring-white/5 md:text-xs">
+            <span className="text-slate-400">&lt;</span>
+            <span className="mx-1">TO</span>
+            <span className="text-accent">.dev</span>
+            <span className="mx-1 text-slate-400">/&gt;</span>
           </span>
           <span className="text-sm font-medium text-slate-200">
             {/* Taras Ostasha */}

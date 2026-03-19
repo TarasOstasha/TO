@@ -47,7 +47,21 @@ const projects = [
     tag: "Beauty salon website · Booking system · Service platform",
     description:
       "Built a modern website and booking platform for a North NJ-based beauty and massage studio. Designed a clean, calming user experience to highlight services such as professional makeup, massage, and add-ons. Developed an intuitive booking flow to simplify appointment scheduling and enhance customer engagement, helping improve client retention and overall booking efficiency.",
-    tech: ["Next.js", "Framer Motion", "Animations"],
+    tech: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "PostCSS",
+      "Next.js (API routes)",
+      "Vercel Serverless Functions",
+      "Resend (Email API)",
+      "JavaScript (ES Modules)",
+      "Lucide React (Icons)",
+      "Google Fonts",
+      "Vercel (Hosting)",
+      "GitHub",
+      "ESLint",
+    ],
   },
   {
     title: "Cybersance",
