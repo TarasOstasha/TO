@@ -1,10 +1,85 @@
 "use client";
 
+import { FormEvent, useCallback, useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp, sectionReveal, staggerContainer } from "@/lib/motion";
+import { SiteToast, type SiteToastVariant } from "@/components/ui/SiteToast";
+
+type ToastState = {
+  variant: SiteToastVariant;
+  title: string;
+  message: string;
+};
 
 export function ContactSection() {
+  const [toast, setToast] = useState<ToastState | null>(null);
+
+  const dismissToast = useCallback(() => setToast(null), []);
+
+  const showToast = useCallback(
+    (variant: SiteToastVariant, title: string, message: string) => {
+      setToast({ variant, title, message });
+    },
+    []
+  );
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/contact.php", {
+        method: "POST",
+        headers: {
+          Accept: "application/json"
+        },
+        body: formData
+      });
+
+      const contentType = response.headers.get("content-type") || "";
+      const isJson = contentType.includes("application/json");
+      const result = isJson ? await response.json() : null;
+
+      if (response.ok && result?.ok) {
+        showToast(
+          "success",
+          "Message sent",
+          "Thanks — I’ll get back to you soon."
+        );
+        form.reset();
+        return;
+      }
+
+      if (isJson && result?.message) {
+        showToast("error", "Couldn’t send", result.message);
+        return;
+      }
+
+      showToast(
+        "error",
+        "Something went wrong",
+        `Send failed (HTTP ${response.status}). Check that contact.php is deployed on your server.`
+      );
+    } catch {
+      showToast(
+        "error",
+        "Network error",
+        "Please check your connection and try again."
+      );
+    }
+  };
+
   return (
+    <>
+      <SiteToast
+        open={toast !== null}
+        variant={toast?.variant ?? "success"}
+        title={toast?.title ?? ""}
+        message={toast?.message ?? ""}
+        onDismiss={dismissToast}
+      />
+
     <motion.section
       id="contact"
       initial="hidden"
@@ -56,8 +131,7 @@ export function ContactSection() {
             </div>
 
             <form
-              action="/contact.php"
-              method="post"
+              onSubmit={handleSubmit}
               className="flex-1 space-y-3 text-[13px]"
             >
               <div>
@@ -119,5 +193,6 @@ export function ContactSection() {
         </motion.div>
       </div>
     </motion.section>
+    </>
   );
 }
