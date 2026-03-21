@@ -45,7 +45,7 @@ export function ContactSection() {
         showToast(
           "success",
           "Message sent",
-          "Thanks — I’ll get back to you soon."
+          "Thanks - I'll get back to you soon."
         );
         form.reset();
         return;
