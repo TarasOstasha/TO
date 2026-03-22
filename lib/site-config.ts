@@ -5,8 +5,8 @@ export const siteMetadata = {
   description:
     "Full stack developer crafting cinematic web experiences with Next.js, TypeScript, Node, and modern tooling.",
   ogDescription:
-    "Full stack developer portfolio — real projects, systems, and automation.",
+    "Full stack developer portfolio - real projects, systems, and automation.",
   twitterDescription:
-    "Full stack developer portfolio — real projects and systems.",
+    "Full stack developer portfolio - real projects and systems.",
   siteName: "Taras Ostasha Portfolio",
 } as const;
