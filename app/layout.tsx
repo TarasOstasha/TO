@@ -1,42 +1,84 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ReactNode } from "react";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { NavBar } from "@/components/layout/NavBar";
 import { FooterBar } from "@/components/layout/FooterBar";
+import { SITE_URL, siteMetadata } from "@/lib/site-config";
 
-// export const metadata: Metadata = {
-//   title: "Taras Ostasha · Full Stack Developer",
-//   description: "Full stack developer crafting cinematic web experiences with Next.js, TypeScript, Node, and modern tooling."
-// };
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: siteMetadata.siteName,
+      description: siteMetadata.description,
+      inLanguage: "en-US",
+      publisher: { "@id": `${SITE_URL}/#person` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Taras Ostasha",
+      url: SITE_URL,
+      image: `${SITE_URL}/preview.jpg`,
+      jobTitle: "Full Stack Developer",
+      email: "dev@tarasostasha.com",
+      sameAs: ["https://github.com/tarasostasha"],
+      address: {
+        "@type": "PostalAddress",
+        addressRegion: "NJ",
+        addressCountry: "US",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tarasostasha.com"),
-  title: "Taras Ostasha · Full Stack Developer",
-  description:
-    "Full stack developer crafting cinematic web experiences with Next.js, TypeScript, Node, and modern tooling.",
-
+  metadataBase: new URL(SITE_URL),
+  title: siteMetadata.title,
+  description: siteMetadata.description,
+  applicationName: siteMetadata.siteName,
+  authors: [{ name: "Taras Ostasha", url: SITE_URL }],
+  creator: "Taras Ostasha",
+  publisher: "Taras Ostasha",
+  category: "technology",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Taras Ostasha · Full Stack Developer",
-    description:
-      "Full stack developer portfolio — real projects, systems, and automation.",
-    url: "https://tarasostasha.com",
-    siteName: "Taras Ostasha Portfolio",
+    title: siteMetadata.title,
+    description: siteMetadata.ogDescription,
+    url: SITE_URL,
+    siteName: siteMetadata.siteName,
+    locale: "en_US",
+    type: "website",
     images: [
       {
         url: "/preview.jpg",
         width: 1200,
         height: 630,
-        alt: "Taras Ostasha Portfolio",
+        alt: siteMetadata.siteName,
       },
     ],
-    type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Taras Ostasha · Full Stack Developer",
-    description:
-      "Full stack developer portfolio — real projects and systems.",
+    title: siteMetadata.title,
+    description: siteMetadata.twitterDescription,
     images: ["/preview.jpg"],
   },
   icons: {
@@ -50,10 +92,21 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
 };
 
+export const viewport: Viewport = {
+  themeColor: "#05060A",
+  colorScheme: "dark",
+};
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className="min-h-screen bg-background text-slate-100">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
+        />
         <ParticleBackground />
         <div className="noise-overlay" />
         <div className="relative z-10 flex min-h-screen flex-col">
