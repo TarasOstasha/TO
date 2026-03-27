@@ -416,6 +416,46 @@ const projects: Project[] = [
         "Reduced delivery-related issues by 99%, improved response time to shipment problems, and became an active live operational tool used daily on office screens.",
     },
   },
+  {
+    title: "Quote Builder App",
+    img: "/images/projects/quote-builder.jpg",
+    tag: "E-commerce tool · Cart automation · Quote generation",
+    description:
+      "Built an internal quote builder tool that connects live website browsing with structured quote creation. Users can open a real browser session, add products to the cart, and instantly import that data into the app to generate accurate customer quotes. Integrated with Volusion API and automated export workflows, significantly reducing manual work and improving sales efficiency.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Express",
+      "Playwright",
+      "Volusion API",
+      "ExcelJS",
+    ],
+    caseStudy: {
+      title: "Quote Builder App",
+      overview:
+        "Internal sales tool designed to convert real website cart activity into structured, export-ready quotes, bridging the gap between live product browsing and operational quote generation.",
+      problem:
+        "The quoting process was manual and inefficient - sales reps had to copy product data from the website, re-enter customer details, and manually calculate totals, leading to slow turnaround times and frequent errors.",
+      solution:
+        "Developed a system that allows users to browse the website in a live session, capture cart data instantly, enrich it with customer and product information, and generate clean, professional quotes ready for export or sharing.",
+      technicalImplementation: [
+        "Next.js + React frontend for interactive quote builder UI",
+        "Node.js + Express backend for API handling and processing",
+        "Playwright integration for live browser session and cart scraping",
+        "Persistent browser profile for real user interaction workflows",
+        "Volusion API integration for fetching product and pricing data",
+        "Customer identification and data retrieval logic",
+        "Support for both Volusion products and custom line items",
+        "Excel export generation using ExcelJS",
+        "Structured quote preview for PDF-style output",
+      ],
+      challenges:
+        "Maintaining a stable browser session for real user interaction while enabling backend scraping, ensuring accurate cart data extraction from a dynamic storefront, and synchronizing scraped data with API-based product information.",
+      results:
+        "Reduced quote creation time from minutes to seconds, eliminated manual data entry errors, streamlined the sales workflow, and enabled fast generation of professional quotes for customers.",
+    },
+  }
 ];
 
 const slideVariants = {
@@ -495,7 +535,7 @@ export function ProjectsSection() {
               A reel of recent work.
             </h2>
             <p className="text-sm text-slate-400">
-              Full stack builds and interactive experiences—replace with your
+              Full stack builds and interactive experiences-replace with your
               own projects and links.
             </p>
             {/* Slider controls: dots */}
